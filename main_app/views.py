@@ -33,7 +33,7 @@ actors = [
     Actor("Harrison Ford", "https://upload.wikimedia.org/wikipedia/commons/3/34/Harrison_Ford_by_Gage_Skidmore_3.jpg",
           "Harrison Ford is an American actor, pilot, and environmental activist. He gained worldwide fame for his starring role as Han Solo in the Star Wars franchise and as the title character of the Indiana Jones film series."),
 
-    Actor("Bill Murray", "https://static1.purepeople.com/articles/7/76/96/7/@/588186-bill-murray-incarnera-bientot-franklin-580x0-2.jpg",
+    Actor("Bill Murray", "https://flxt.tmsimg.com/assets/8327_v9_bc.jpg",
           "Bill Murray is an American actor, comedian, and writer. Known for his deadpan delivery, he first rose to fame on Saturday Night Live, a series of performances that earned him his first Emmy Award."),
 
     Actor("Eddie Murphy", "https://parade.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTkwNTgxMDM0Nzk5ODAyMjM2/eddie-murphy-ftr.jpg",
@@ -63,3 +63,11 @@ actors = [
     Actor("Marilyn Monroe", "https://hips.hearstapps.com/hmg-prod/images/news-photo-515346396-1562946515.jpg",
           "Marilyn Monroe was an American actress, model, and singer. Famous for playing comedic \"blonde bombshell\" characters, she became one of the most popular sex symbols of the 1950s and early 1960s and was emblematic of the era's changing attitudes towards sexuality."),
 ]
+
+class ActorList(TemplateView):
+    template_name = "actor_list.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["actors"] = actors 
+        return context
