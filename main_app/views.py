@@ -118,19 +118,19 @@ class ActorDetail(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["wishlists"] = Wishlist.objects.all()
+        context["watchlists"] = Watchlist.objects.all()
         return context
 
 class ActorUpdate(UpdateView):
     model = Actor
-    fields = ['name', 'img', 'bio', 'verified_artist']
+    fields = ['name', 'img', 'bio', 'verified_actor']
     template_name = "actor_update.html"
     success_url = "/actors/"
 
 class ActorDelete(DeleteView):
     model = Actor
     template_name = "actor_delete_confirmation.html"
-    success_url = "/aactors/"
+    success_url = "/actors/"
 
 class MovieCreate(View):
 

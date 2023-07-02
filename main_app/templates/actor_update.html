@@ -1,0 +1,12 @@
+{% extends 'base.html' %} 
+{% block content %}
+<div class="update-page-container">
+  <h1 class="pt-3">Update {{actor.name}}</h1>
+
+  <form class="update-form" action="" method="post">
+    {% csrf_token %} {{form.as_p}}
+    <input type="submit" value="Submit" />
+  </form>
+  <a href="{% url 'actor_list' %}">Go back</a>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% block content %}
+<div class="delete-page-container">
+  <div class="picture-delete-p">
+    <img class="image is-128x128"
+        src="/main_app/static/main_app/images/picture_delete_banner.jpeg"
+        alt="colorful waves-effect"
+      />
+  </div>
+  <h1 class="delete-page-title">
+    Are you sure you want to delete {{actor.name}}?
+  </h1>
+  <form method="post">
+    {% csrf_token %}
+    <div class="buttons">
+      <!-- Confirm actor delete -->
+      <input class="button is-danger custom-confirm-button" type="submit" value="Confirm" />
+      <!-- Redirect back to detail on cancel -->
+      <a
+        class="button is-primary custom-cancel-button"
+        href="{% url 'actor_detail' actor.pk %}"
+        >Cancel</a
+      >
+    </div>
+  </form>
+</div>
+{% endblock %}
