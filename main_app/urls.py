@@ -5,5 +5,5 @@ urlpatterns = [
     path('', views.Home.as_view(), name="home"), 
     path('about/', views.About.as_view(), name='about'),
     path('actors/', views.ActorList.as_view(), name='actor_list'), 
-
+    path('movies/', views.MovieList.as_view(), name="movie_list"),
 ]

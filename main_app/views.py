@@ -17,6 +17,29 @@ class Actor:
         self.image = image
         self.bio = bio
 
+class MovieList(TemplateView):
+    template_name = "movie_list.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["movies"] = movies
+        return context
+
+class Movie:
+    def __init__(self, image, title, release_date, actors, runtime, genre, synopsis):
+        self.image = image
+        self.title = title
+        self.release_date = release_date
+        self.actors = actors
+        self.runtime = runtime
+        self.genre = genre
+        self.synopsis = synopsis
+
+movies = [
+    Movie("https://m.media-amazon.com/images/I/91mgQQaBOCL._RI_.jpg", "Unbreakable", 2000, ["Bruce Willis", "Samuel L. Jackson"], 106, "Drama, Mystery, Sci-Fi", "A man learns something extraordinary about himself after a devastating accident."),
+    Movie("https://s3.amazonaws.com/nightjarprod/content/uploads/sites/130/2022/01/19173426/dvEggyDTTIBDvrUNjTEa9depT0f-scaled.jpg", "Dirty Dancing", 1987, ["Patrick Swayze", "Jennifer Grey"], 100, "Drama, Music, Romance", "Spending the summer at a Catskills resort with her family, Frances \"Baby\" Houseman falls in love with the camp's dance instructor, Johnny Castle.")
+]
+
 actors = [
     Actor("Kevin Costner", "https://ntvb.tmsimg.com/assets/assets/36838_v9_bc.jpg?w=270&h=360", 
           "Kevin Costner is an American actor and filmmaker. He has received various accolades, including two Academy Awards, three Golden Globe Awards, a Primetime Emmy Award, and two Screen Actors Guild Awards."),

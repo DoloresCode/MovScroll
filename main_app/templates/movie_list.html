@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% comment %} for head title tags and helping us with
+SEO {% endcomment %} {% block title %}Movie List{% endblock %} 
+
+{% block content %} 
+{% for movie in movies %}
+<div class="movie-image">
+  <img src="{{movie.image}}" alt="{{movie.title}}" />
+</div>
+<h1>{{movie.title}}</h1>
+<p>Release Year: {{movie.release_date}}</p>
+<p>Runtime: {{movie.runtime}} minutes</p>
+<p>Genre: {{movie.genre}}</p>
+<p>Main Cast: {{movie.actors|join:", "}}</p>
+<p>Synopsis: {{movie.synopsis}}</p>
+<hr />
+{% empty %}
+<p>No movies available</p>
+{% endfor %} {% endblock %}

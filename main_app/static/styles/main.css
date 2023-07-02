@@ -33,3 +33,11 @@ h3 {
 p {
     font-size: 12px;
 }
+
+/* Movie Lis Page */
+
+.movie-image img {
+    width: 200px;  
+    height: auto;
+    margin-top: 2rem;
+}
