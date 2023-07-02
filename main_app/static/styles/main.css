@@ -1,4 +1,5 @@
 body {
+    font-family: Roboto, sans-serif;
     background-color: white;
     color: black;
     min-height: 100vh;
@@ -34,6 +35,30 @@ p {
     font-size: 12px;
 }
 
+/* Footer in base.html */
+
+.footer {
+    background-color: #94778B;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    /* position: fixed; */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+    margin-top: 4rem;
+  }
+  
+  .footer a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .footer a:hover {
+    color: #e8e3de;
+  }
+
 /* Movie List Page */
 
 .movie-image img {
@@ -44,4 +69,50 @@ p {
 
 .control .button.is-success.custom-search-button {
     background-color: rgb(42, 166, 215);
+}
+
+/* Create actor Page */
+
+.title-create-actor {
+    color: #000;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-left: 5rem;
+    margin-top: 2rem;
+}
+
+form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #94778B;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form input[type="submit"] {
+    background-color: rgb(42, 166, 215);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #E54B4B;
 }

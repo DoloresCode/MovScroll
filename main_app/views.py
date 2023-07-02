@@ -3,6 +3,7 @@ from django.views import View
 from .models import Actor
 from django.http import HttpResponse 
 from django.views.generic.base import TemplateView
+from django.views.generic.edit import CreateView
 
 # Create your views here.
 
@@ -103,3 +104,9 @@ class ActorList(TemplateView):
             # default header for not searching 
             context["header"] = "Trending Artists"
         return context
+
+class ActorCreate(CreateView):
+    model = Actor
+    fields = ['name', 'img', 'bio', 'verified_actor']
+    template_name = "actor_create.html"
+    success_url = "/actors/"

@@ -8,11 +8,20 @@ SEO {% endcomment %} {% block title %}Actors{% endblock %} {% block content %}
       <input class="input" type="text" name="name" placeholder="name" />
     </div>
     <div class="control">
-      <input class="button is-success custom-search-button" type="submit" value="Search" />
+      <input
+        class="button is-success custom-search-button"
+        type="submit"
+        value="Search"
+      />
     </div>
   </div>
-  <a class="button is-dark " href="{% url 'actor_list' %}">Clear Search</a>
+  <a class="button is-dark" href="{% url 'actor_list' %}">Clear Search</a>
 </form>
+<div class="mb-5">
+  <a class="button is-dark add-actor-btn" href="{% url 'actor_create' %}"
+    >Add Actor</a
+  >
+</div>
 <div class="gallery">
   {% for actor in actors %}
   <a href="">
