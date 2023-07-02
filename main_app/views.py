@@ -1,9 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import redirect
 from django.views import View
-from .models import Actor
+from .models import Actor, Movie, Watchlist
 from django.http import HttpResponse 
 from django.views.generic.base import TemplateView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import DetailView
 
 # Create your views here.
@@ -115,3 +115,47 @@ class ActorCreate(CreateView):
 class ActorDetail(DetailView):
     model = Actor
     template_name = "actor_detail.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["wishlists"] = Wishlist.objects.all()
+        return context
+
+class ActorUpdate(UpdateView):
+    model = Actor
+    fields = ['name', 'img', 'bio', 'verified_artist']
+    template_name = "actor_update.html"
+    success_url = "/actors/"
+
+class ActorDelete(DeleteView):
+    model = Actor
+    template_name = "actor_delete_confirmation.html"
+    success_url = "/aactors/"
+
+class MovieCreate(View):
+
+    def post(self, request, pk):
+        image = request.POST.get("imgage")
+        title = request.POST.get("title")
+        release_date = request.POST.get("release_date")
+        runtime = request.POST.get("runtime")
+        genre = request.POST.get("genre")
+        synopsis = request.POST.get("synopsis")
+        actor = Actor.objects.get(pk=pk)
+        Movie.objects.create(image=image, title=title, release_date=release_date, runtime=runtime, genre=genre, synopsis=synopsis, actor=actor)
+        return redirect('actor_detail', pk=pk)
+    
+class WatchlistMovieAssoc(View):
+
+    def get(self, request, pk, movie_pk):
+        # get the query param from the url
+        assoc = request.GET.get("assoc")
+        if assoc == "remove":
+            # get the watchlist by the id and
+            # remove from the join table the given song_id
+            Watchlist.objects.get(pk=pk).movies.remove(movie_pk)
+        if assoc == "add":
+            # get the watchlist by the id and
+            # add to the join table the given song_id
+            Watchlist.objects.get(pk=pk).movies.add(movie_pk)
+        return redirect('home')
