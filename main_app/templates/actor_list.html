@@ -17,14 +17,14 @@ SEO {% endcomment %} {% block title %}Actors{% endblock %} {% block content %}
   </div>
   <a class="button is-dark" href="{% url 'actor_list' %}">Clear Search</a>
 </form>
-<div class="mb-5">
+<div class="mb-5 button-add-actor-container">
   <a class="button is-dark add-actor-btn" href="{% url 'actor_create' %}"
     >Add Actor</a
   >
 </div>
 <div class="gallery">
   {% for actor in actors %}
-  <a href="">
+  <a href="{% url 'actor_detail' actor.pk %}">
     <div class="card">
       <div class="card-image">
         <figure class="image is-square">

@@ -4,6 +4,7 @@ from .models import Actor
 from django.http import HttpResponse 
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import CreateView
+from django.views.generic import DetailView
 
 # Create your views here.
 
@@ -102,7 +103,7 @@ class ActorList(TemplateView):
         else:
             context["actors"] = Actor.objects.all()
             # default header for not searching 
-            context["header"] = "Trending Artists"
+            context["header"] = "Trending Actors"
         return context
 
 class ActorCreate(CreateView):
@@ -110,3 +111,7 @@ class ActorCreate(CreateView):
     fields = ['name', 'img', 'bio', 'verified_actor']
     template_name = "actor_create.html"
     success_url = "/actors/"
+
+class ActorDetail(DetailView):
+    model = Actor
+    template_name = "actor_detail.html"

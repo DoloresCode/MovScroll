@@ -35,6 +35,44 @@ p {
     font-size: 12px;
 }
 
+.detail__img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 500px;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.detail__img::after {
+    content: "";
+    background-image: linear-gradient(transparent 60%, #1f1f1f);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+
+img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.detail__name {
+    position: absolute;
+    z-index: 5;
+    top: 400px;
+}
+
+.detail__container {
+    margin-top: 500px;
+}
+
 /* Footer in base.html */
 
 .footer {
@@ -48,16 +86,16 @@ p {
     width: 100%;
     font-size: 14px;
     margin-top: 4rem;
-  }
-  
-  .footer a {
+}
+
+.footer a {
     color: #ffffff;
     text-decoration: none;
-  }
-  
-  .footer a:hover {
+}
+
+.footer a:hover {
     color: #e8e3de;
-  }
+}
 
 /* Movie List Page */
 
@@ -80,6 +118,12 @@ p {
     margin-bottom: 20px;
     margin-left: 5rem;
     margin-top: 2rem;
+}
+
+.link-go-back-new {
+    color: rgb(42, 166, 215);
+    margin-left: 5rem;
+    margin-bottom: 2rem;;
 }
 
 form {
@@ -115,4 +159,11 @@ form input[type="submit"] {
 
 form input[type="submit"]:hover {
     background-color: #E54B4B;
+}
+
+/* Actors Page*/
+
+.button-add-actor-container {
+    text-align: center;
+
 }

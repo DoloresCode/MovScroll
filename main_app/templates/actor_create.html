@@ -2,6 +2,9 @@
 {% block content %}
 <h1 class="title-create-actor">Add an Actor</h1>
 
+<div class="link-go-back-new">
+<a href="{% url 'actor_list' %}">> Go back</a>
+</div>
 <form method="post">
 <!-- Security Feature  -->
   {% csrf_token %} 
