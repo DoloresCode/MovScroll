@@ -15,5 +15,5 @@ urlpatterns = [
     path('actors/<int:pk>/movies/new/',
          views.MovieCreate.as_view(), name="movie_create"),
     path('watchlists/<int:pk>/movies/<int:movie_pk>/',
-         views.PlaylistSongAssoc.as_view(), name="watchlist_movie_assoc"),
+         views.WatchlistMovieAssoc.as_view(), name="watchlist_movie_assoc"),
 ]

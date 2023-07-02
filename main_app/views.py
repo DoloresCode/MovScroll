@@ -11,6 +11,12 @@ from django.views.generic import DetailView
 class Home(TemplateView):
     template_name = "home.html"
 
+    # Here we have added the playlists as context
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["watchlists"] = Watchlist.objects.all()
+        return context
+    
 class About(TemplateView):
     template_name = "about.html"
 
@@ -28,15 +34,15 @@ class MovieList(TemplateView):
         context["movies"] = movies
         return context
 
-class Movie:
-    def __init__(self, image, title, release_date, actors, runtime, genre, synopsis):
-        self.image = image
-        self.title = title
-        self.release_date = release_date
-        self.actors = actors
-        self.runtime = runtime
-        self.genre = genre
-        self.synopsis = synopsis
+# class Movie:
+#     def __init__(self, image, title, release_year, actors, runtime, genre, synopsis):
+#         self.image = image
+#         self.title = title
+#         self.release_year = release_year
+#         self.actors = actors
+#         self.runtime = runtime
+#         self.genre = genre
+#         self.synopsis = synopsis
 
 movies = [
     Movie("https://m.media-amazon.com/images/I/91mgQQaBOCL._RI_.jpg", "Unbreakable", 2000, ["Bruce Willis", "Samuel L. Jackson"], 106, "Drama, Mystery, Sci-Fi", "A man learns something extraordinary about himself after a devastating accident."),
@@ -135,14 +141,14 @@ class ActorDelete(DeleteView):
 class MovieCreate(View):
 
     def post(self, request, pk):
-        image = request.POST.get("imgage")
+        image = request.POST.get("img")
         title = request.POST.get("title")
-        release_date = request.POST.get("release_date")
+        release_year = request.POST.get("release_year")
         runtime = request.POST.get("runtime")
         genre = request.POST.get("genre")
         synopsis = request.POST.get("synopsis")
         actor = Actor.objects.get(pk=pk)
-        Movie.objects.create(image=image, title=title, release_date=release_date, runtime=runtime, genre=genre, synopsis=synopsis, actor=actor)
+        Movie.objects.create(image=image, title=title, release_year=release_year, runtime=runtime, genre=genre, synopsis=synopsis, actor=actor)
         return redirect('actor_detail', pk=pk)
     
 class WatchlistMovieAssoc(View):

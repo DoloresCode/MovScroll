@@ -1,10 +1,10 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% block content %}
 <div class="detail__img">
     <img src="{{actor.img}}" alt="{{actor.name}}" />
 </div>
 <div class="detail__name">
-    {% if actor.verified_actort %}
+    {% if actor.verified_artist %}
     <div class="icon-text">
         <span class="icon has-text-info">
             <i class="fas fa-check-circle"></i>
@@ -12,19 +12,91 @@
         <span>Verified</span>
     </div>
     {% endif %}
+
+    
     <h1 class="title">{{actor.name}}</h1>
 </div>
 <div class="detail__container">
+    <div class="detail__movies mb-5">
+        <h3 class="title is-3">Movies</h3>
+
+        <form class="mb-5" action="{% url 'movie_create' actor.pk %}" method="post">
+            {% csrf_token %}
+
+            <div class="field has-addons">
+                <div class="control">
+                    <input class="input" type="text" name="img" placeholder="Image URL" required /></div>
+                <div class="control">
+                    <input class="input" type="text" name="title" placeholder="Title" required /></div>
+                <div class="control">
+                    <input class="input" type="number" name="release_year" placeholder="Release Year" required />
+                </div>
+                <div class="control">
+                    <input class="input" type="number" name="runtime" placeholder="Runtime in Seconds" required />
+                </div>
+                <div class="control">
+                    <input class="input" type="text" name="genre" placeholder="Genre" required />
+                </div>
+                <div class="control">
+                    <textarea class="input" name="synopsis" placeholder="Synopsis" required></textarea>
+                </div>
+                <div class="control">
+                    <textarea class="input" name="synopsis" placeholder="Synopsis" required></textarea>
+                </div>
+            
+                <div class="control">
+                    <input class="button is-primary" type="submit" value="Add Movie" />
+                </div>
+            </div>
+        </form>
+        
+        <!-- before the for loop for movies -->   
+        {% for movie in actor.movies.all %}
+        <div class="movie">
+            <span>{{forloop.counter}}</span>
+            <span><b>{{movie.title}}</b></span>
+            <span>{{movie.get_runtime}}</span>
+        <!-- each watchlist becomes a drop down item with the ids needed to add to the join table  -->    
+            <span>
+                <div class="dropdown">
+                    <div class="dropdown-trigger">
+                        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                            <span>Add to Watchlist</span>
+                            <span class="icon is-small">
+                                <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                        <div class="dropdown-content">
+                            {% for watchlist in watchlists %}
+                                <a href="{% url 'watchlist_movie_assoc' watchlist.pk movie.pk %}?assoc=add"
+                                class="dropdown-item">{{ watchlist.title }}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </span>
+            <!-- Inside movie div -->
+        </div>
+        {% empty %}
+        <article class="message">
+            <div class="message-header">
+                <p>No Movies Available</p>
+            </div>
+        </article>
+        {% endfor %}
+    </div>
     <div class="buttons">
-        <a href="{% url 'artist_update' artist.pk %}" class="button is-info"> Update
+        <a href="{% url 'actor_update' actor.pk %}" class="button is-info">
             <span class="icon">
                 <i class="fas fa-edit"></i>
             </span>
         </a>
-        <a href="{% url 'actor_delete' actor.pk %}" class="button is-danger">
-            <span class="icon">
+        <span class="icon">
+            <a href="{% url 'actor_delete' actor.pk %}" class="button is-danger">
                 <i class="fas fa-trash-alt"></i>
-            </span>
+        </span>
         </a>
     </div>
     <div class="detail__about">
@@ -32,5 +104,4 @@
         <p>{{actor.bio}}</p>
     </div>
 </div>
-
 {% endblock %}
