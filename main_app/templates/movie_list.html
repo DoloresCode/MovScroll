@@ -10,7 +10,8 @@ SEO {% endcomment %} {% block title %}Movie List{% endblock %}
 <p>Release Year: {{movie.release_year}}</p>
 <p>Runtime: {{movie.runtime}} minutes</p>
 <p>Genre: {{movie.genre}}</p>
-<p>Main Cast: {{movie.actors|join:", "}}</p>
+<p>Main Casts: {% for actor in movie.actors.all %}{{ actor.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+<p>Image URL: {{movie.img}}</p>
 <p>Synopsis: {{movie.synopsis}}</p>
 <hr />
 {% empty %}

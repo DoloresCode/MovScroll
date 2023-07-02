@@ -24,26 +24,22 @@
             {% csrf_token %}
 
             <div class="field has-addons">
-                <div class="control">
-                    <input class="input" type="text" name="img" placeholder="Image URL" required /></div>
+                {% comment %} <div class="control">
+                    <input class="input" type="text" name="img" placeholder="Image URL" required /></div> {% endcomment %}
                 <div class="control">
                     <input class="input" type="text" name="title" placeholder="Title" required /></div>
                 <div class="control">
-                    <input class="input" type="number" name="release_year" placeholder="Release Year" required />
-                </div>
-                <div class="control">
+                    {% comment %} <input class="input" type="number" name="release_year" placeholder="Release Year" required />
+                </div> {% endcomment %}
+                {% comment %} <div class="control">
                     <input class="input" type="number" name="runtime" placeholder="Runtime in Seconds" required />
-                </div>
+                </div> {% endcomment %}
                 <div class="control">
                     <input class="input" type="text" name="genre" placeholder="Genre" required />
                 </div>
-                <div class="control">
+                {% comment %} <div class="control">
                     <textarea class="input" name="synopsis" placeholder="Synopsis" required></textarea>
-                </div>
-                <div class="control">
-                    <textarea class="input" name="synopsis" placeholder="Synopsis" required></textarea>
-                </div>
-            
+                </div> {% endcomment %}
                 <div class="control">
                     <input class="button is-primary" type="submit" value="Add Movie" />
                 </div>
