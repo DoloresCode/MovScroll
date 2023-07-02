@@ -1,18 +1,25 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% comment %} for head title tags and helping us with
+SEO {% endcomment %} {% block title %}Actors{% endblock %} {% block content %}
 
-{% comment %} for head title tags and helping us with SEO {% endcomment %}
-{% block title %}Actors{% endblock  %}
-
-{% block content %}
-
-<h1 class="title pt-5">Trending Actors</h1>
+<h1 class="title pt-5">{{header}}</h1>
+<form class="mb-5" method="get">
+  <div class="field has-addons">
+    <div class="control">
+      <input class="input" type="text" name="name" placeholder="name" />
+    </div>
+    <div class="control">
+      <input class="button is-success custom-search-button" type="submit" value="Search" />
+    </div>
+  </div>
+  <a class="button is-dark " href="{% url 'actor_list' %}">Clear Search</a>
+</form>
 <div class="gallery">
   {% for actor in actors %}
   <a href="">
     <div class="card">
       <div class="card-image">
         <figure class="image is-square">
-          <img src="{{actor.image}}" alt="{{actor.name}}" />
+          <img src="{{actor.img}}" alt="{{actor.name}}" />
         </figure>
       </div>
       <div class="card-header">

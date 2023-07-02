@@ -34,10 +34,14 @@ p {
     font-size: 12px;
 }
 
-/* Movie Lis Page */
+/* Movie List Page */
 
 .movie-image img {
     width: 200px;  
     height: auto;
     margin-top: 2rem;
+}
+
+.control .button.is-success.custom-search-button {
+    background-color: rgb(42, 166, 215);
 }
