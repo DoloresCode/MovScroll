@@ -164,7 +164,7 @@ class WatchlistMovieAssoc(View):
             # get the watchlist by the id and
             # add to the join table the given song_id
             Watchlist.objects.get(pk=pk).movies.add(movie_pk)
-        return redirect('home')
+        return redirect('watchlist_list')
     
 
 class WatchlistList(ListView):

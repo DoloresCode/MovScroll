@@ -15,6 +15,11 @@
         <div class="movie-synopsis">
             <p>Synopsis: {{ movie.synopsis }}</p>
         </div>
+          <a href="{% url 'watchlist_movie_assoc' watchlist.pk movie.pk %}?assoc=remove" class="button is-danger is-outlined">
+            <span class="icon is-small">
+                <i class="fas fa-times"></i>
+            </span>
+          </a>
     </div>
 {% empty %}
     <p>No movies in this watchlist yet.</p>
