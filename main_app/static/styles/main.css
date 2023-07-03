@@ -462,11 +462,18 @@ img {
   height: auto; 
 }
 
+.delete-page-title {
+ text-align: center;
+ margin-bottom: 2rem;
+ font-size: 30px;
+}
 
+.buttons-delete-pg {
+  text-align: center;
+}
 
-
-
-
-
+.button.is-primary.custom-cancel-button {
+  background-color: rgb(42, 166, 215);
+}
 
 
