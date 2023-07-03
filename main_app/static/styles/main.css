@@ -35,7 +35,7 @@ p {
   font-size: 12px;
 }
 
-.detail__img {
+/* .detail__img {
   position: absolute;
   left: 0;
   top: 0;
@@ -54,16 +54,17 @@ p {
   width: 100%;
   height: 100%;
   z-index: 5;
-}
+} */
 
-img {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-  object-position: top;
-}
+/* .detail__img {
+  position: flex;
+} */
 
-.detail__name {
+
+
+
+
+/* .detail__name {
   position: absolute;
   z-index: 5;
   top: 400px;
@@ -71,8 +72,8 @@ img {
 
 .detail__container {
   margin-top: 500px;
-}
-
+} */
+/* 
 .detail__movies {
   width: 100%;
   display: flex;
@@ -90,7 +91,7 @@ img {
 .movie:hover {
   background-color: hsla(0, 0%, 100%, 0.1);
   cursor: pointer;
-} 
+}  */
 
 /* Footer in base.html */
 
@@ -99,8 +100,6 @@ img {
   color: #ffffff;
   text-align: center;
   padding: 20px;
-  /* position: fixed; */ /*No don't keep it*/
-    
   left: 0;
   bottom: 0;
   width: 100%;
@@ -303,14 +302,6 @@ form input[type="submit"]:hover {
   
 /* About Page */
 
-/* About Page */
-
-/* body {
-    font-family: Roboto, sans-serif;
-    background-color: white;
-    color: black;
-    line-height: 1.6;
-  } */
   
   .top-section {
     margin: 2rem auto;
@@ -401,7 +392,49 @@ form input[type="submit"]:hover {
     text-align: center;
   }
   
+/* Actor Detail Page */
 
+img {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+  object-position: top;
+}
+
+.detail__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh; 
+  margin-top: 2rem;
+  margin-bottom: 0rem;
+}
+
+.detail__name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 30vh; 
+}
+
+.actor-name {
+  margin-top: 1rem; 
+}
+
+/* media query to adjust styles for smaller screens */
+@media screen and (max-width: 768px) {
+  .detail__img {
+    min-height: 40vh; 
+  }
+
+  .detail__name {
+    min-height: 20vh; 
+  }
+
+  .actor-name {
+    margin-top: 0.5rem; 
+  }
+}
 
 
 
