@@ -52,7 +52,7 @@
     {% for movie in actor.movies.all %}
     <div class="movie">
       <span>{{forloop.counter}}</span>
-      <span><b>{{movie.title}}</b></span>
+      <span><b class="movie-t-detPag">{{movie.title}}</b></span>
       <span>{{movie.get_runtime}}</span>
     </div>
 		{% empty %}

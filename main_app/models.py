@@ -32,7 +32,9 @@ class Movie(models.Model):
 
 # Here we define the method to look at the length property and convert it
     def get_runtime(self):
-        return time.strftime("%-M:%S", time.gmtime(self.runtime))
+        hours, remainder = divmod(self.runtime, 60)
+        minutes = remainder
+        return "{:02}:{:02}".format(int(hours), int(minutes))
     
 class Watchlist(models.Model):
     title = models.CharField(max_length=3000)
