@@ -128,7 +128,12 @@ class MovieUpdate(UpdateView):
         context['movie'] = self.get_object()
         return context
 
-    
+class MovieDelete(DeleteView):
+    model = Movie
+    template_name = "movie_delete_confirmation.html"
+    success_url = "/movies/"
+
+
 class WatchlistMovieAssoc(View):
 
     def get(self, request, pk, movie_pk):
