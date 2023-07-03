@@ -447,6 +447,12 @@ img {
   margin-right: 50px; 
 }
 
+.dropdown {
+  margin-left: 80px;
+}
+
+
+
 /* Update Page */
 
 /*Like homepage so take the css*/
@@ -476,4 +482,126 @@ img {
   background-color: rgb(42, 166, 215);
 }
 
+/* Watchlist Page */
+
+.watchlists-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.watchlist-item {
+  border: 1px solid #94778b;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.watchlist-item:hover {
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.watchlist-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.watchlist-title a {
+  color: rgb(42, 166, 215);
+  text-decoration: none;
+}
+
+.watchlist-title a:hover {
+  color: #94778b;
+}
+
+.links-back-movie-List-wachl {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.links-back-movie-List-wachl a {
+  color: #000;
+  text-decoration: none;
+}
+
+.links-back-movie-List-wachl a:hover {
+  color: rgb(42, 166, 215);
+}
+
+.watchlist-empty {
+  text-align: center;
+  color: #94778b;
+}
+
+/* Watchlist DEtail Page */
+
+
+.title-watchlist_detail_p {
+  font-size: 2em;
+  color: rgb(42, 166, 215);
+  margin-bottom: 20px;
+  margin-top: 1rem;
+
+}
+
+.sub-watchlist_detail_p {
+  font-size: 1.5em;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.movie-container {
+  border: 1px solid #94778b;
+  border-radius: 5px;
+  padding: 20px;
+  
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.movie-container:hover {
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.movie-img img {
+  width: 10%; 
+  height: auto;
+  border-radius: 5px;
+}
+
+.movie-synopsis {
+  margin-top: 10px;
+}
+
+.movie-synopsis p {
+  font-size: 1em;
+  color: #000;
+}
+
+.button.is-danger.is-outlined {
+  color: #ff3860;
+  border-color: #ff3860;
+  margin-top: 10px;
+}
+
+.button.is-danger.is-outlined:hover {
+  color: #fff;
+  background-color: #ff3860;
+}
+
+button[type="button"] {
+  background-color: rgb(42, 166, 215);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button[type="button"]:hover {
+  background-color: #94778b;
+}
 

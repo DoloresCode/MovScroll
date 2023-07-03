@@ -8,10 +8,10 @@
 
 {% for movie in watchlist.movies.all %}
     <div class="movie-container">
+      <div class="movie-img">
+          <img src="{{ movie.img }}" alt="{{ movie.title }} poster">
+      </div>
         <h3>Title: {{ movie.title }}</h3>
-        <div class="movie-img">
-            <img src="{{ movie.img }}" alt="{{ movie.title }} poster">
-        </div>
         <div class="movie-synopsis">
             <p>Synopsis: {{ movie.synopsis }}</p>
         </div>
