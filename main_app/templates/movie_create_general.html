@@ -44,7 +44,7 @@
     </div>
 
     <div class="form-group">
-      <label for="{{ form.actors.id_for_label }}">Actors:</label>
+      <label for="{{ form.actors.id_for_label }}">Main Casts:</label>
       <select name="actors" multiple>
           {% for actor in actors %}
               <option value="{{ actor.id }}">{{ actor.name }}</option>
