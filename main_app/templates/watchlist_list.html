@@ -1,0 +1,25 @@
+{% extends 'base.html' %} 
+
+{% block title %}Watchlists{% endblock %} 
+
+{% block content %}
+<div class="watchlists-container">
+    <h1 class="title">Watchlists</h1>
+    <div class="links-back-movie-List-wachl">
+      <a href="{% url 'movie_list' %}">Go to Movie List</a>
+  </div>
+    {% for watchlist in object_list %}
+        <div class="watchlist-item">
+            <h2 class="watchlist-title">
+                <a href="{% url 'watchlist_detail' watchlist.pk %}">{{ watchlist.title }}</a>
+            </h2>
+        </div>
+    {% empty %}
+        <div class="watchlist-empty">
+            <p>No watchlists to display</p>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+

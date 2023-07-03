@@ -1,0 +1,27 @@
+{% extends 'base.html' %} 
+
+{% block title %}Watchlist Detail{% endblock %} 
+
+{% block content %}
+<h1 class="title-watchlist_detail_p">{{ watchlist.title }}</h1>
+<h2 class="sub-watchlist_detail_p">Movies in this Watchlist:</h2>
+
+{% for movie in watchlist.movies.all %}
+    <div class="movie-container">
+        <h3>Title: {{ movie.title }}</h3>
+        <div class="movie-img">
+            <img src="{{ movie.img }}" alt="{{ movie.title }} poster">
+        </div>
+        <div class="movie-synopsis">
+            <p>Synopsis: {{ movie.synopsis }}</p>
+        </div>
+    </div>
+{% empty %}
+    <p>No movies in this watchlist yet.</p>
+{% endfor %}
+
+<a href="{% url 'watchlist_list' %}">
+  <button type="button">Go back to Watchlist List</button>
+</a>
+
+{% endblock %}

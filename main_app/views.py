@@ -4,7 +4,7 @@ from .models import Actor, Movie, Watchlist
 from django.http import HttpResponse 
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.views.generic import DetailView
+from django.views.generic import DetailView, ListView
 
 # Create your views here.
 
@@ -165,3 +165,12 @@ class WatchlistMovieAssoc(View):
             # add to the join table the given song_id
             Watchlist.objects.get(pk=pk).movies.add(movie_pk)
         return redirect('home')
+    
+
+class WatchlistList(ListView):
+    model = Watchlist
+    template_name = "watchlist_list.html"
+
+class WatchlistDetail(DetailView):
+    model = Watchlist
+    template_name = "watchlist_detail.html"

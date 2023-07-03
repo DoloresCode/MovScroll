@@ -12,4 +12,7 @@ urlpatterns = [
     path('actors/<int:pk>/delete', views.ActorDelete.as_view(), name="actor_delete"),
     path('actors/<int:pk>/movies/new/', views.MovieCreate.as_view(), name="movie_create"),
     path('watchlists/<int:pk>/movies/<int:movie_pk>/', views.WatchlistMovieAssoc.as_view(), name="watchlist_movie_assoc"),
+    path('watchlists/', views.WatchlistList.as_view(), name="watchlist_list"),
+    path('watchlist/<int:pk>/', views.WatchlistDetail.as_view(), name='watchlist_detail'),
+
 ]
