@@ -1,28 +1,76 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
+
 {% block title %}Home{% endblock %}
 
 {% block content %}
+
 <div class="jumbotron text-center">
-  <h1>Welcome to MovScroll</h1>
-  <p>Your ultimate movie database!</p>
+  <h1 class="home-title">Welcome to MovScroll</h1>
+  <p class="sub-title-home">Your ultimate movie database!</p>
+</div>
+
+<div class="image-container-home">
+  <img class="image-home"
+src="/static/main_app/images/picture_homepage_1.jpeg"
+alt="Roll of retro film strip"
+/>
+</div>
+<div class="container-btn-learn-more">
+  <a href="/about" class="button-learn-more">Learn More</a>
 </div>
 
 <div class="container-pop-movies">
   <div class="row">
     <h2>Popular Movies</h2>
     <div class="col-sm-4">
+      <div class="image-bottom-home">
+        <img
+          src="https://cdn.smehost.net/legacyrecordingscom-hydricprod/wp-content/uploads/2022/09/220921_whitney_bodyguardevent.jpg"
+          alt="Bodyguard"
+          style="width: 30%; height: auto"
+        />
+      </div>
       <h4>Bodyguard</h4>
-      <p>A former Secret Service agent takes on the job of bodyguard to a pop singer, whose lifestyle is most unlike a President's.</p>
+      <p class="parag-movie-bott-home">
+        A former Secret Service agent takes on the job of bodyguard to a pop
+        singer, whose lifestyle is most unlike a President's.
+      </p>
     </div>
     <div class="col-sm-4">
+      <div class="image-bottom-home">
+        <img
+          src="https://s3.amazonaws.com/nightjarprod/content/uploads/sites/130/2022/01/19173426/dvEggyDTTIBDvrUNjTEa9depT0f-scaled.jpg"
+          alt="Dirty Dancing"
+          style="width: 30%; height: auto"
+        />
+      </div>
       <h4>Dirty Dancing</h4>
-      <p>Spending the summer at a Catskills resort with her family, Frances "Baby" Houseman falls in love with the camp's dance instructor, Johnny Castle.</p>
+      <p class="parag-movie-bott-home">
+        Spending the summer at a Catskills resort with her family, Frances
+        "Baby" Houseman falls in love with the camp's dance instructor, Johnny
+        Castle.
+      </p>
     </div>
     <div class="col-sm-4">
+      <div class="image-bottom-home">
+        <img
+          src="https://m.media-amazon.com/images/M/MV5BOWEwODJmZDItYTNmZC00OGM4LThlNDktOTQzZjIzMGQxODA4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg"
+          alt="Rush"
+          style="width: 30%; height: auto"
+        />
+      </div>
       <h4>Rush</h4>
-      <p>The merciless 1970s rivalry between Formula One rivals James Hunt and Niki Lauda.</p>
+      <p class="parag-movie-bott-home">
+        The merciless 1970s rivalry between Formula One rivals James Hunt and
+        Niki Lauda.
+      </p>
     </div>
   </div>
+</div>
+<div class="container-btn-see-movies">
+  <a href="/movies" class="button-see-movies">See 
+    Movies
+  </a>
 </div>
 
 {% endblock %}
