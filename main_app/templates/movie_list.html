@@ -12,6 +12,10 @@ SEO {% endcomment %} {% block title %}Movie List{% endblock %}
 <p>Genre: {{movie.genre}}</p>
 <p>Main Casts: {% for actor in movie.actors.all %}{{ actor.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
 <p>Synopsis: {{movie.synopsis}}</p>
+
+<p><a href="{% url 'movie_update' movie.id %}" class="btn btn-primary">Update Movie</a></p>
+
+
 <hr />
 {% empty %}
 <p>No movies available</p>
