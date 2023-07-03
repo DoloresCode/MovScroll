@@ -116,6 +116,19 @@ class MovieCreateGeneral(CreateView):
         context['actors'] = Actor.objects.all()
         return context
     
+class MovieUpdate(UpdateView):
+    model = Movie
+    fields = ['img', 'title', 'release_year', 'runtime', 'genre', 'synopsis', 'actors']
+    template_name = 'movie_update.html'
+    success_url = '/movies/'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['actors'] = Actor.objects.all()
+        context['movie'] = self.get_object()
+        return context
+
+    
 class WatchlistMovieAssoc(View):
 
     def get(self, request, pk, movie_pk):

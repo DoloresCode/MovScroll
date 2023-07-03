@@ -15,5 +15,6 @@ urlpatterns = [
     path('watchlists/', views.WatchlistList.as_view(), name="watchlist_list"),
     path('watchlist/<int:pk>/', views.WatchlistDetail.as_view(), name='watchlist_detail'),
     path('movie/new/', views.MovieCreateGeneral.as_view(), name="movie_create_general"),
-
+    path('movies/<int:pk>/update', views.MovieUpdate.as_view(), name="movie_update"),
+    path('movies/<int:pk>/delete', views.MovieDelete.as_view(), name="movie_delete"),
 ]
