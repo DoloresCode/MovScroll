@@ -4,7 +4,10 @@
 </div>
 
 <div class="detail__name">
-  {% if actor.verified_artist %}
+  <div class="actor-name">
+    <h1 class="title">{{actor.name}}</h1>
+  </div>
+  {% if actor.verified_actor %}
   <div class="icon-text">
     <span class="icon has-text-info">
       <i class="fas fa-check-circle"></i>
@@ -12,23 +15,9 @@
     <span>Verified</span>
   </div>
   {% endif %}
-  <div class="actor-name">
-    <h1 class="title">{{actor.name}}</h1>
-  </div>
 </div>
 <div class="detail__container">
-  <div class="buttons">
-    <a href="{% url 'actor_update' actor.pk %}" class="button is-info">
-      <span class="icon">
-        <i class="fas fa-edit"></i>
-      </span>
-    </a>
-    <a href="{% url 'actor_delete' actor.pk %}" class="button is-danger">
-      <span class="icon">
-        <i class="fas fa-trash-alt"></i>
-      </span>
-    </a>
-  </div>
+  
   <div class="detail__movies mb-5">
     <h3 class="title is-3">Movies</h3>
 
@@ -49,13 +38,13 @@
                     class="input"
                     type="number"
                     name="runtime"
-                    placeholder="Runtime in Seconds"
+                    placeholder="Runtime in minutes"
                     min="1"
                     required
                 />
             </div>
             <div class="control">
-                <input class="button is-primary" type="submit" value="Add Movie" />
+                <input class="button is-black" type="submit" value="Add Movie" />
             </div>
         </div>
     </form>
@@ -75,8 +64,20 @@
 
     {% endfor %}
   </div>
+  <div class="buttons">
+    <a href="{% url 'actor_update' actor.pk %}" class="button is-info">
+      <span class="icon">
+        <i class="fas fa-edit"></i>
+      </span>
+    </a>
+    <a href="{% url 'actor_delete' actor.pk %}" class="button is-danger">
+      <span class="icon">
+        <i class="fas fa-trash-alt"></i>
+      </span>
+    </a>
+  </div>
   <div class="detail__about">
-    <h4 class="title is-4">About</h4>
+    <h4 class="title is-3">About</h4>
     <p>{{actor.bio}}</p>
   </div>
 </div>

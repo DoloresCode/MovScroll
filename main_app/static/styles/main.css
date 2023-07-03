@@ -412,9 +412,10 @@ img {
 
 .detail__name {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 30vh; 
+  min-height: 15vh; 
 }
 
 .actor-name {
@@ -428,7 +429,7 @@ img {
   }
 
   .detail__name {
-    min-height: 20vh; 
+    min-height: 15vh; 
   }
 
   .actor-name {
@@ -436,7 +437,11 @@ img {
   }
 }
 
-
+.icon-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 
 
