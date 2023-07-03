@@ -1,7 +1,7 @@
 {% extends 'base.html' %} 
 {% block content %}
 <div class="update-page-container">
-  <h1 class="pt-3">Update {{actor.name}}</h1>
+  <h1 class="title pt-5">Update {{actor.name}}</h1>
 
   <form class="update-form" action="" method="post">
     {% csrf_token %} {{form.as_p}}

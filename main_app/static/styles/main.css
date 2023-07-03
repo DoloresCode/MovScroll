@@ -449,9 +449,18 @@ img {
 
 /* Update Page */
 
+/*Like homepage so take the css*/
+.picture-delete-p {
+  flex: 1; 
+  height: 200px; 
+  overflow: hidden; 
+  margin-bottom: 2rem;
+}
 
-
-
+.image-delete-p {
+  width: 100%; 
+  height: auto; 
+}
 
 
 
