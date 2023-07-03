@@ -301,4 +301,121 @@ form input[type="submit"]:hover {
     text-align: center;
   }
   
+/* About Page */
+
+/* About Page */
+
+/* body {
+    font-family: Roboto, sans-serif;
+    background-color: white;
+    color: black;
+    line-height: 1.6;
+  } */
+  
+  .top-section {
+    margin: 2rem auto;
+    max-width: 800px;
+    text-align: center;
+  }
+  
+  .about-page-title {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  .top-section p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 2rem;
+  }
+  
+  .container-btn-see-actors,
+  .container-btn-see-movies-about {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .button-see-actors,
+  .button-see-movies-about {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: rgb(42, 166, 215);
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button-see-actors:hover,
+  .button-see-movies-about:hover {
+    background-color: #94778b;
+  }
+  
+  .middle-section {
+    margin: 1rem auto;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .contributor-section img {
+    border-radius: 50%;
+    width: 128px;
+    height: 128px;
+  }
+  
+  .contributor-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  .right-side-paragraph {
+    color: #666;
+  }
+  
+  .right-side-paragraph a {
+    color: rgb(42, 166, 215);
+    text-decoration: none;
+  }
+  
+  .right-side-paragraph a:hover {
+    color: #94778b;
+  }
+  
+  .UseCases-title {
+    font-size: 2em;
+    color: #333;
+    margin: 2rem 0 1rem;
+    text-align: center;
+  }
+  
+  .UseCases-section p {
+    font-size: 1.2em;
+    color: #666;
+    margin: 0 auto;
+    max-width: 800px;
+    text-align: center;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
