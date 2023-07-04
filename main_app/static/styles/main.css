@@ -436,7 +436,7 @@ img {
   margin-left: 80px;
 }
 
-/* Update Page */
+/* Delete Page */
 
 /*Like homepage so take the css*/
 .picture-delete-p {
@@ -630,3 +630,39 @@ form p {
   margin-left: 5rem;
   margin-top: 2rem;
 }
+
+/* Delete Movie Page */
+
+.top-delete-move-img {
+
+  flex: 1;
+  height: 400px;
+  overflow: hidden;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.image-delete-movie-pg {
+  width: 100%;
+  height: auto;
+
+}
+
+.delete-movie-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 30px;
+}
+
+
+.btn-delete-movie .form-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px; 
+}
+
+.btn-delete-movie .form-group button,
+.btn-delete-movie .form-group a {
+  margin: 0 10px; /* 10px space to the left and right of each button */
+}
+

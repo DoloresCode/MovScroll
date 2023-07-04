@@ -5,19 +5,21 @@
 {% block content %}
 
   <div class="delete-confirmation-container">
-    <h1>Delete Movie</h1>
+
     <div class="top-delete-move-img">
         <img class="image-delete-movie-pg"
           src="/static/main_app/images/delete-movie-page-img.jpeg"
           alt="Abstract colorful gradient wave 3d rendering, white background, chromatic dispersion and thin film spectral effect"
         />
       </div>
-      <p>Are you sure you want to delete the movie "{{ movie.title }}"?</p>
+      <p class="delete-movie-title">Are you sure you want to delete the movie "{{ movie.title }}"?</p>
       <form method="POST">
         {% csrf_token %}
-        <div class="form-group">
-          <button type="submit" class="button is-danger">Delete</button>
-          <a href="{% url 'movie_list' %}" class="button is-light">Cancel</a>
+        <div class="btn-delete-movie">
+            <div class="form-group">
+                <button type="submit" class="button is-danger">Delete</button>
+                <a href="{% url 'movie_list' %}" class="button is-light">Cancel</a>
+            </div>
         </div>
       </form>
       </div>      
