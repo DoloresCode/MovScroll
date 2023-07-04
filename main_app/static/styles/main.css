@@ -520,6 +520,25 @@ img {
   color: #94778b;
 }
 
+
+.btn-group-updatte-delete {
+  display: flex;
+  align-items: center;
+}
+
+.btn-group-updatte-delete .is-primary {
+  background-color: rgb(42, 166, 215);
+  margin-right: 10px;
+}
+
+.create-watchlist-button {
+  background-color: #94778b !important;
+}
+
+.create-watchlist-button:hover {
+  background-color: rgb(42, 166, 215) !important;
+}
+
 /* Watchlist DEtail Page */
 
 

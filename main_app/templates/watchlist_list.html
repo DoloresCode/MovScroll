@@ -5,6 +5,13 @@
 {% block content %}
 <div class="watchlists-container">
     <h1 class="title">Watchlists</h1>
+
+    <a href="{% url 'watchlist_create' %}" class="button is-primary create-watchlist-button">
+      <span class="icon">
+        <i class="fas fa-plus"></i>
+      </span>
+    </a>
+
     <div class="links-back-movie-List-wachl">
       <a href="{% url 'movie_list' %}">> Go to Movie List</a>
     </div>
@@ -14,19 +21,20 @@
             <h2 class="watchlist-title">
                 <a href="{% url 'watchlist_detail' watchlist.pk %}">{{ watchlist.title }}</a>
             </h2>
-            <div class="btn-group-updatte-delete">
-              <a href="{% url 'watchlist_update' watchlist.id %}" class="button is-primary">
+
+            <div class="movie-actions">
+              <a href="{% url 'watchlist_update' watchlist.id %}" class="button is-info">
                 <span class="icon">
-                    <i class="fas fa-edit"></i>
+                  <i class="fas fa-edit"></i>
                 </span>
               </a>
-
               <a href="{% url 'watchlist_delete' watchlist.id %}" class="button is-danger">
                 <span class="icon">
-                    <i class="fas fa-trash-alt"></i>
+                  <i class="fas fa-trash-alt"></i>
                 </span>
               </a>
-            </div>  
+          </div>
+
         </div>
     {% empty %}
         <div class="watchlist-empty">
