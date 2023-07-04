@@ -677,3 +677,21 @@ form p {
   margin-left: 5rem;
   margin-top: 2rem;
 }
+
+/* Watchlist Update PAge */
+
+.watchlist-select-sub-text {
+  color: #666;
+  font-size: 12px;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.title-update-watchlist {
+  color: #000;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-left: 5rem;
+  margin-top: 2rem;
+}

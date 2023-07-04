@@ -187,4 +187,23 @@ class WatchlistDelete(DeleteView):
     template_name = "watchlist_delete_confirmation.html"
     success_url = "/watchlists/"
 
+class WatchlistUpdate(UpdateView):
+    model = Watchlist
+    fields = ['title', 'movies']
+    template_name = "watchlist_update.html"
+    success_url = "/watchlists/"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['movies'] = Movie.objects.all()
+        return context
+
+    def form_valid(self, form):
+        watchlist = form.save(commit=False)
+        watchlist.movies.clear()
+        movies = self.request.POST.getlist('movies')
+        for movie_id in movies:
+            movie = Movie.objects.get(pk=movie_id)
+            watchlist.movies.add(movie)
+        watchlist.save()
+        return super().form_valid(form)

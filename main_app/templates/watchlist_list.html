@@ -14,13 +14,19 @@
             <h2 class="watchlist-title">
                 <a href="{% url 'watchlist_detail' watchlist.pk %}">{{ watchlist.title }}</a>
             </h2>
-            
-            <a href="{% url 'watchlist_delete' watchlist.id %}" class="button is-danger">
-              <span class="icon">
-                  <i class="fas fa-trash-alt"></i>
-              </span>
-          </a>
-            
+            <div class="btn-group-updatte-delete">
+              <a href="{% url 'watchlist_update' watchlist.id %}" class="button is-primary">
+                <span class="icon">
+                    <i class="fas fa-edit"></i>
+                </span>
+              </a>
+
+              <a href="{% url 'watchlist_delete' watchlist.id %}" class="button is-danger">
+                <span class="icon">
+                    <i class="fas fa-trash-alt"></i>
+                </span>
+              </a>
+            </div>  
         </div>
     {% empty %}
         <div class="watchlist-empty">

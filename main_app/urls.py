@@ -19,4 +19,5 @@ urlpatterns = [
     path('movies/<int:pk>/delete', views.MovieDelete.as_view(), name="movie_delete"),
     path('watchlists/new/', views.WatchlistCreate.as_view(), name="watchlist_create"),
     path('watchlists/<int:pk>/delete', views.WatchlistDelete.as_view(), name='watchlist_delete'),
+    path('watchlists/<int:pk>/update', views.WatchlistUpdate.as_view(), name="watchlist_update"),
 ]
