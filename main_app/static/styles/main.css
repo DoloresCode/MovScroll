@@ -79,6 +79,26 @@ p {
 margin-top: 1rem;
 }
 
+.btn-primary {
+  background-color: rgb(42, 166, 215);
+  color: #ffffff;
+  border: none; 
+  padding: 10px 20px; 
+  text-align: center;  
+  text-decoration: none;  
+  display: inline-block;  
+  font-size: 16px;  
+  margin: 4px 2px;  
+  cursor: pointer;  
+  transition-duration: 0.4s;
+  border-radius: 5px; /* Added based on your form input styling */
+}
+
+.btn-primary:hover {
+  background-color: #94778b;
+  color: #ffffff; 
+}
+
 /* Create actor Page */
 
 .title-create-actor {
@@ -405,7 +425,6 @@ img {
 }
 
 
-
 /* Update Page */
 
 /*Like homepage so take the css*/
@@ -558,3 +577,39 @@ button[type="button"]:hover {
   background-color: #94778b;
 }
 
+/* Create a New Movie Page */
+
+.title-create-movie {
+  color: #000;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-left: 5rem;
+  margin-top: 2rem;
+}
+
+/* form label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+} */
+
+form p {
+  color: #666;
+  font-size: 12px;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.actor-select-sub-text {
+  color: #666;
+  font-size: 12px;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.form-group label {
+  color:#ff3860;
+  font-weight: bold;
+  font-size: 14px;
+}

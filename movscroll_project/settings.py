@@ -94,27 +94,27 @@ WSGI_APPLICATION = 'movscroll_project.wsgi.application'
 
 # To use Neon with Django, you have to create a Project on Neon and specify the project connection settings in your settings.py in the same way as for standalone Postgres.
 
-# DATABASES = {
-#   'default': {
-#     'ENGINE': 'django.db.backends.postgresql',
-#     'NAME': 'Movscroll',
-#      'USER': os.environ['DB_USER'],
-#     'PASSWORD': os.environ['DB_PW'],
-#     'HOST': os.environ['DB_HOST'],
-#     'PORT': '5432',
-#   }
-# }
+DATABASES = {
+  'default': {
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': 'Movscroll',
+     'USER': os.environ['DB_USER'],
+    'PASSWORD': os.environ['DB_PW'],
+    'HOST': os.environ['DB_HOST'],
+    'PORT': '5432',
+  }
+}
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': dj_database_url.config(
-        # Feel free to alter this value to suit your needs.
-        conn_max_age=600,
-        conn_health_checks=True
-    )
-}
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         # Feel free to alter this value to suit your needs.
+#         conn_max_age=600,
+#         conn_health_checks=True
+#     )
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
