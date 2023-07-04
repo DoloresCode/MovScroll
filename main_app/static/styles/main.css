@@ -634,7 +634,6 @@ form p {
 /* Delete Movie Page */
 
 .top-delete-move-img {
-
   flex: 1;
   height: 400px;
   overflow: hidden;
@@ -666,3 +665,13 @@ form p {
   margin: 0 10px; /* 10px space to the left and right of each button */
 }
 
+/* Create watchlist Page */
+
+.title-create-watchlist {
+  color: #000;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-left: 5rem;
+  margin-top: 2rem;
+}

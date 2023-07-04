@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Create Watchlist{% endblock %}
+
+{% block content %}
+  <h1 class="title-create-watchlist">Create a New Watchlist</h1>
+
+  <div class="link-go-back-new">
+    <a href="{% url 'watchlist_list' %}">> Go back</a>
+    </div>
+
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.title.label }}: {{ form.title }} <br>
+    
+    {{ form.movies.label }}Movies: <br>
+    <select name="movies" multiple>
+    {% for movie in movies %}
+      <option value="{{ movie.id }}">{{ movie.title }}</option>
+    {% endfor %}
+    </select>
+    <div class="actor-select-sub-text">
+        <small>To select multiple actors, hold down the Command key (on Mac) or Control key (on Windows) while clicking on the actors.</small>
+    </div>
+<br>
+  <input type="submit" value="Create Watchlist" />
+  </form>
+  
+{% endblock %}
+

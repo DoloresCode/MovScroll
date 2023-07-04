@@ -158,3 +158,26 @@ class WatchlistDetail(DetailView):
     model = Watchlist
     template_name = "watchlist_detail.html"
 
+class WatchlistCreate(CreateView):
+    model = Watchlist
+    fields = ['title']
+    template_name = "watchlist_create.html"
+    success_url = "/watchlists/"
+
+# access to al the movies to pick in the list
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data( **kwargs)
+        context['movies'] = Movie.objects.all()
+        return context
+    
+    def post(self, request, *args, **kwargs):
+        form = self.get_form()
+        if form.is_valid():
+            watchlist = form.save()  # save the new watchlist instance
+            movies = request.POST.getlist('movies')  # i get the list of selected movie ids
+            for movie_id in movies:
+                movie = Movie.objects.get(pk=movie_id)
+                watchlist.movies.add(movie)  # I add each selected movie to the watchlist
+            return redirect(self.success_url)
+        else:
+            return self.form_invalid(form)
