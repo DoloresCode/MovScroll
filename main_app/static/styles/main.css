@@ -99,6 +99,15 @@ margin-top: 1rem;
   color: #ffffff; 
 }
 
+.title-movie-display {
+  color:#666;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 0.5rem;
+
+}
+
+
 /* Create actor Page */
 
 .title-create-actor {
@@ -114,6 +123,8 @@ margin-top: 1rem;
   color: rgb(42, 166, 215);
   margin-left: 5rem;
   margin-bottom: 2rem;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 form {
@@ -139,6 +150,7 @@ form textarea {
 
 form input[type="submit"] {
   background-color: rgb(42, 166, 215);
+  font-weight: bold;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -151,7 +163,7 @@ form input[type="submit"]:hover {
   background-color: #e54b4b;
 } 
 
-/* Actors Page*/
+/* Actors Page */
 
 .button-add-actor-container {
   text-align: center;
@@ -424,7 +436,6 @@ img {
   margin-left: 80px;
 }
 
-
 /* Update Page */
 
 /*Like homepage so take the css*/
@@ -588,11 +599,6 @@ button[type="button"]:hover {
   margin-top: 2rem;
 }
 
-/* form label {
-  font-weight: bold;
-  display: block;
-  margin-bottom: 5px;
-} */
 
 form p {
   color: #666;
@@ -612,4 +618,15 @@ form p {
   color:#ff3860;
   font-weight: bold;
   font-size: 14px;
+}
+
+/* Update Movie Page */
+
+.title-update-movie {
+  color: #000;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-left: 5rem;
+  margin-top: 2rem;
 }
