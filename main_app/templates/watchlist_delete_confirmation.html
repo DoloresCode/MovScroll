@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete Watchlist{% endblock %} 
+
+{% block content %}
+
+  <div class="delete-confirmation-container">
+
+    <div class="top-delete-move-img">
+        <img class="image-delete-movie-pg"
+          src="/static/main_app/images/delete-watchlist-page-img.jpeg"
+          alt="Abstract colorful gradient wave 3d rendering, white background, chromatic dispersion and thin film spectral effect"
+        />
+      </div>
+      <p class="delete-movie-title">Are you sure you want to delete the watchlist "{{ watchlist.title }}"?</p>
+      <form method="POST">
+        {% csrf_token %}
+        <div class="btn-delete-movie">
+            <div class="form-group">
+                <button type="submit" class="button is-danger">Delete</button>
+                <a href="{% url 'watchlist_list' %}" class="button is-light">Cancel</a>
+            </div>
+        </div>
+      </form>
+      </div>      
+{% endblock %} 

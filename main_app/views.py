@@ -181,3 +181,10 @@ class WatchlistCreate(CreateView):
             return redirect(self.success_url)
         else:
             return self.form_invalid(form)
+        
+class WatchlistDelete(DeleteView):
+    model = Watchlist
+    template_name = "watchlist_delete_confirmation.html"
+    success_url = "/watchlists/"
+
+
