@@ -436,14 +436,15 @@ img {
   margin-left: 80px;
 }
 
-/* Delete Page */
+/* Actor Delete Page */
 
 /*Like homepage so take the css*/
 .picture-delete-p {
   flex: 1; 
-  height: 200px; 
+  height: 400px; 
   overflow: hidden; 
   margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 .image-delete-p {
@@ -459,11 +460,17 @@ img {
 
 .buttons-delete-pg {
   text-align: center;
+  
 }
 
+.custom-cancel-button{
+  margin-top: 1rem;
+  font-weight: bold;
+}
 .button.is-primary.custom-cancel-button {
   background-color: rgb(42, 166, 215);
 }
+
 
 /* Watchlist Page */
 
